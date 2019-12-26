@@ -1,5 +1,5 @@
 $(function() {
-    const anim_id;
+    let anim_id;
 
     const container = $('#container');
     const car = $('#car');
