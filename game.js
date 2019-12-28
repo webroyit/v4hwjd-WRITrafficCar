@@ -117,4 +117,23 @@ $(function() {
             move_down = requestAnimationFrame(down);
         }
     }
+
+    anim_id = requestAnimationFrame(repeat);
+
+    function repeat(){
+        if(!game_over){
+
+            // move these cars down
+            car_down(car_1);
+            car_down(car_2);
+            car_down(car_3);
+
+            anim_id = requestAnimationFrame(repeat);
+        }
+    }
+
+    function car_down(car){
+        let current_top = parseInt(car.css("top"));
+        car.css("top", current_top + speed);
+    }
 });
