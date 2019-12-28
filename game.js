@@ -134,6 +134,12 @@ $(function() {
 
     function car_down(car){
         let current_top = parseInt(car.css("top"));
+
+        // move the other cars back to the top to start the animation again
+        if(current_top > container_height){
+            current_top = -200;
+        }
+
         car.css("top", current_top + speed);
     }
 });
