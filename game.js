@@ -31,6 +31,25 @@ $(function() {
     let move_up = false;
     let move_down = false;
 
+    $(document).on("keydown", function(event){
+        if(!game_over){
+            let key = event.keyCode;
+            if(key === 37 && !move_left){
+                move_left = requestAnimationFrame(left);
+            }
+        }
+    });
+
+    $(document).on("keyup", function(event){
+        if(!game_over){
+            let key = event.keyCode;
+            if(key === 37){
+                cancelAnimationFrame(move_left);
+                move_left = false;
+            }
+        }
+    });
+
     function collision($div1, $div2) {
         const x1 = $div1.offset().left;
         const y1 = $div1.offset().top;
@@ -47,5 +66,12 @@ $(function() {
 
         if (b1 < y2 || y1 > b2 || r1 < x2 || x1 > r2) return false;
         return true;
+    }
+
+    function left(){
+        if(!game_over){
+            car.css("left", parseInt(car.css("left")) - 5);
+            move_left = requestAnimationFrame(left);
+        }
     }
 });
