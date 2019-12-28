@@ -37,6 +37,9 @@ $(function() {
             if(key === 37 && !move_left){
                 move_left = requestAnimationFrame(left);
             }
+            else if(key === 39 && !move_right){
+                move_right = requestAnimationFrame(right);
+            }
         }
     });
 
@@ -46,6 +49,10 @@ $(function() {
             if(key === 37){
                 cancelAnimationFrame(move_left);
                 move_left = false;
+            }
+            else if(key === 39){
+                cancelAnimationFrame(move_right);
+                move_right = false;
             }
         }
     });
@@ -72,6 +79,13 @@ $(function() {
         if(!game_over && parseInt(car.css("left")) > 0){
             car.css("left", parseInt(car.css("left")) - 5);
             move_left = requestAnimationFrame(left);
+        }
+    }
+
+    function right(){
+        if(!game_over && parseInt(car.css("left")) < container_width - car_width){
+            car.css("left", parseInt(car.css("left")) + 5);
+            move_right = requestAnimationFrame(right);
         }
     }
 });
