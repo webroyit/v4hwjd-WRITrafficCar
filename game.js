@@ -128,6 +128,11 @@ $(function() {
             car_down(car_2);
             car_down(car_3);
 
+            // move the lines down
+            line_down(line_1);
+            line_down(line_2);
+            line_down(line_3);
+
             anim_id = requestAnimationFrame(repeat);
         }
     }
@@ -145,5 +150,16 @@ $(function() {
         }
 
         car.css("top", current_top + speed);
+    }
+
+    function line_down(line){
+        let line_current_top = parseInt(line.css("top"));
+
+        // move the line back to the top
+        if(line_current_top > container_height){
+            line_current_top = -300;
+        }
+
+        line.css("top", line_current_top + line_speed);
     }
 });
