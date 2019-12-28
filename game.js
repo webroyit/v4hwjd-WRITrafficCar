@@ -138,6 +138,10 @@ $(function() {
         // move the other cars back to the top to start the animation again
         if(current_top > container_height){
             current_top = -200;
+
+            // make the other start at different position
+            let car_left = parseInt(Math.random() * (container_width - car_width));
+            car.css("left", car_left);
         }
 
         car.css("top", current_top + speed);
