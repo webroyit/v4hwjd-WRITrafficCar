@@ -133,6 +133,12 @@ $(function() {
                 score.text(parseInt(score.text()) + 1);
             }
 
+            // make the other cars go faster
+            if(score_counter % 500 === 0){
+                speed++;
+                line_speed++;
+            }
+
             // move these cars down
             car_down(car_1);
             car_down(car_2);
