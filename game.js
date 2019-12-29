@@ -13,6 +13,9 @@ $(function() {
     const restart_btn = $('#restart');
     const score = $('#score');
 
+    const buttonLeft = $("#button-left");
+    const buttonRight = $("#button-right");
+
     const container_left = parseInt(container.css('left'));
     const container_width = parseInt(container.width());
     const container_height = parseInt(container.height());
@@ -197,5 +200,17 @@ $(function() {
     // refresh the page
     restart_btn.click(function(){
         location.reload();
+    });
+
+    buttonLeft.click(function(){
+        if(!game_over && parseInt(car.css("left")) > 0){
+            car.css("left", parseInt(car.css("left")) - 10);
+        }
+    });
+
+    buttonRight.click(function(){
+        if(!game_over && parseInt(car.css("left")) < container_width - car_width){
+            car.css("left", parseInt(car.css("left")) + 10);
+        }
     });
 });
