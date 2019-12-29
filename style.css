@@ -4,6 +4,9 @@ body {
     margin: 0;
     background-color: #afd645;
     font-family: sans-serif;
+
+    /* disable the double-tap zoom in browser on mobile devices */
+    touch-action: manipulation;
 }
 
 #container{
