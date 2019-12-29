@@ -123,6 +123,10 @@ $(function() {
     function repeat(){
         if(!game_over){
 
+            if(collision(car, car_1) || collision(car, car_2) || collision(car, car_3)){
+                stop_the_game();
+            }
+
             // move these cars down
             car_down(car_1);
             car_down(car_2);
@@ -161,5 +165,17 @@ $(function() {
         }
 
         line.css("top", line_current_top + line_speed);
+    }
+
+    function stop_the_game(){
+        game_over = true;
+        cancelAnimationFrame(anim_id);
+        cancelAnimationFrame(move_up);
+        cancelAnimationFrame(move_down);
+        cancelAnimationFrame(move_left);
+        cancelAnimationFrame(move_right);
+
+        // show the popup
+        restart_div.slideDown();
     }
 });

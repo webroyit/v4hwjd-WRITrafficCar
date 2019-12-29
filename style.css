@@ -161,11 +161,13 @@ body {
 
 #restart {
     border: none;
-    padding: 25px;
+    padding: 20px 15px;
     color: white;
-    background-color: #8a64ff;
+    background-color: #ff6464;
     font-size: 30px;
+    border-radius: 10px;
     margin-top: 30%;
+    cursor: pointer;
 }
 
 .small_text{
