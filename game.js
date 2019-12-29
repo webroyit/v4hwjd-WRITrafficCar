@@ -177,5 +177,13 @@ $(function() {
 
         // show the popup
         restart_div.slideDown();
+
+        // allow enter keyboard to work
+        restart_btn.focus();
     }
+
+    // refresh the page
+    restart_btn.click(function(){
+        location.reload();
+    });
 });
