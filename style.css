@@ -206,3 +206,15 @@ body {
 #button-right{
     right: 0;
 }
+
+@media(max-width: 750px){
+    #container{
+        height: 81vh;
+    }
+
+    #score_div{
+        font-size: 25px;
+        width: 24.4rem;
+        padding: 5px;
+    }
+}
