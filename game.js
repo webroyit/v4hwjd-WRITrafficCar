@@ -23,7 +23,7 @@ $(function() {
 
     let score_counter = 1;
 
-    let speed = 2;
+    let speed = 3;
     let line_speed = 5;
 
     let move_right = false;
@@ -125,6 +125,12 @@ $(function() {
 
             if(collision(car, car_1) || collision(car, car_2) || collision(car, car_3)){
                 stop_the_game();
+            }
+
+            // update the score
+            score_counter++;
+            if(score_counter % 20 === 0){
+                score.text(parseInt(score.text()) + 1);
             }
 
             // move these cars down
