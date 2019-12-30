@@ -14,8 +14,8 @@ $(function() {
     const restart_btn = $('#restart');
     const score = $('#score');
 
-    const buttonLeft = $("#button-left");
-    const buttonRight = $("#button-right");
+    const buttonLeft = document.getElementById("button-left");
+    const buttonRight = document.getElementById("button-right");
 
     const container_left = parseInt(container.css('left'));
     const container_width = parseInt(container.width());
@@ -204,15 +204,15 @@ $(function() {
         location.reload();
     });
 
-    buttonLeft.click(function(){
-        if(!game_over && parseInt(car.css("left")) > 0){
-            car.css("left", parseInt(car.css("left")) - 20);
-        }
-    });
+    buttonLeft.addEventListener('touchstart', left, false);
+    buttonLeft.addEventListener('touchend', () => {
+        cancelAnimationFrame(move_left);
+        move_left = false;
+    }, false);
 
-    buttonRight.click(function(){
-        if(!game_over && parseInt(car.css("left")) < container_width - car_width){
-            car.css("left", parseInt(car.css("left")) + 20);
-        }
-    });
+    buttonRight.addEventListener('touchstart', right, false);
+    buttonRight.addEventListener('touchend', () => {
+        cancelAnimationFrame(move_right);
+        move_right = false;
+    }, false);
 });
