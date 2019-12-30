@@ -6,6 +6,7 @@ $(function() {
     const car_1 = $('#car_1');
     const car_2 = $('#car_2');
     const car_3 = $('#car_3');
+    const car_4 = $('#car_4');
     const line_1 = $('#line_1');
     const line_2 = $('#line_2');
     const line_3 = $('#line_3');
@@ -126,7 +127,7 @@ $(function() {
     function repeat(){
         if(!game_over){
 
-            if(collision(car, car_1) || collision(car, car_2) || collision(car, car_3)){
+            if(collision(car, car_1) || collision(car, car_2) || collision(car, car_3) || collision(car, car_4)){
                 stop_the_game();
             }
 
@@ -146,6 +147,7 @@ $(function() {
             car_down(car_1);
             car_down(car_2);
             car_down(car_3);
+            car_down(car_4);
 
             // move the lines down
             line_down(line_1);
@@ -204,13 +206,13 @@ $(function() {
 
     buttonLeft.click(function(){
         if(!game_over && parseInt(car.css("left")) > 0){
-            car.css("left", parseInt(car.css("left")) - 10);
+            car.css("left", parseInt(car.css("left")) - 20);
         }
     });
 
     buttonRight.click(function(){
         if(!game_over && parseInt(car.css("left")) < container_width - car_width){
-            car.css("left", parseInt(car.css("left")) + 10);
+            car.css("left", parseInt(car.css("left")) + 20);
         }
     });
 });

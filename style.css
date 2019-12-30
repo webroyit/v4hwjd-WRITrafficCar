@@ -133,20 +133,26 @@ body {
 }
 
 #car_1{
-    top: -100px;
+    top: -90px;
     left: 60%;
     background-color: #26c5ff;
 }
 
 #car_2{
-    top: -200px;
+    top: -180px;
     left: 40%;
     background-color: #26c5ff;
 }
 
 #car_3{
-    top: -350px;
+    top: -370px;
     left: 50%;
+    background-color: #26c5ff;
+}
+
+#car_4{
+    top: -290px;
+    left: 10%;
     background-color: #26c5ff;
 }
 
