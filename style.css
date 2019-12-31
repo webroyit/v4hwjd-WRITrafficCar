@@ -200,12 +200,13 @@ body {
 }
 
 #button-left, #button-right{
+    display: none;
     position: absolute;
     bottom: 0;
-    padding: .3rem .8rem;
-    font-size: 2.3rem;
+    padding: .3rem 1rem;
+    font-size: 4rem;
     cursor: pointer;
-    opacity: .3;
+    opacity: .1;
 }
 
 #button-left{
@@ -225,5 +226,9 @@ body {
         font-size: 25px;
         width: 24.4rem;
         padding: 5px;
+    }
+
+    #button-left, #button-right{
+        display: block;
     }
 }
