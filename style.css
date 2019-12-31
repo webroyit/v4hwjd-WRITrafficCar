@@ -38,6 +38,15 @@ body {
     top: 450px;
 }
 
+.coin{
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: #b7f50d;
+    box-shadow: 0px 1px 8px 0px black;
+}
+
 .car{
     position: absolute;
     height: 60px;

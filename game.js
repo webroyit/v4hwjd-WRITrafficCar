@@ -7,6 +7,7 @@ $(function() {
     const car_2 = $('#car_2');
     const car_3 = $('#car_3');
     const car_4 = $('#car_4');
+    const coin = $('#coin');
     const line_1 = $('#line_1');
     const line_2 = $('#line_2');
     const line_3 = $('#line_3');
@@ -130,6 +131,11 @@ $(function() {
             if(collision(car, car_1) || collision(car, car_2) || collision(car, car_3) || collision(car, car_4)){
                 stop_the_game();
             }
+            
+            // player earn 5 point for getting the coin
+            if(collision(car, coin)){
+                get_coin(coin);
+            }
 
             // update the score
             score_counter++;
@@ -142,6 +148,9 @@ $(function() {
                 speed++;
                 line_speed++;
             }
+
+            // move the coin down
+            car_down(coin);
 
             // move these cars down
             car_down(car_1);
@@ -197,6 +206,14 @@ $(function() {
 
         // allow enter keyboard to work
         restart_btn.focus();
+    }
+
+    // give point to player and move the coin to the top
+    function get_coin(car){
+        score.text(parseInt(score.text()) + 5);
+        let current_top = parseInt(car.css("top"));
+        current_top = -200;
+        car.css("top", current_top);
     }
 
     // refresh the page
